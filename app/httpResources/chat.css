@@ -1,0 +1,176 @@
+:root {
+  font-family: monospace;
+  --darkText: black;
+  --lightText: #e9e9e9;
+  --purple: #281d28;
+  --olive: #353525;
+  --cream: #ffd6b1;
+  --grey: #696969;
+}
+html {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 30px 5px black;
+  background-color: var(--olive);
+}
+
+body {
+  margin: 0;
+  display: flex;
+}
+
+
+.mainNav {
+  width: 18%;
+  min-width: 160px;
+  height: 100vh;
+  background-color: var(--purple);
+  box-shadow: 
+    0 0 5px 0px var(--cream),
+    0 0 30px 5px black;
+  transition: transform 0.7s;
+}
+
+.mainNav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.mainNav ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--lightText);
+  text-shadow: 2px 2px 5px black;
+  line-height: 30px;
+}
+
+.mainNavTopBar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+}
+
+.mainNavTopBar > nav{
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--lightText);
+  text-shadow: 2px 2px 5px black;
+  line-height: 40px;
+}
+
+.mainNavTopBar > nav:hover, .mainNav ul li:hover{
+  cursor: pointer;
+  background-color:#382d38;
+}
+
+.mainNavClosed {
+  transform: translateX(-100%);
+  transition: transform 0.7s;
+}
+
+.mainNavToggleOpen{
+  background-color: var(--purple);
+  transform: rotate(-180deg) translateX(-100%);
+  transition: transform 0.7s, box-shadow 0.7s;
+  box-shadow: 
+    0 0 5px 0px var(--cream),
+    0 0 30px 5px black;
+}
+
+.mainNavToggle{
+  transition: transform 0.7s, box-shadow 0.7s;
+}
+
+.mainPane {
+  width: 82%;
+  height: 100vh;
+}
+
+
+.chatPane {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  height: 98vh;
+  padding: 1vh 1%;
+}
+
+.chatTitle {
+  width: 98%;
+  height: 8%;
+  background-color: var(--purple);
+  margin: auto;
+  border-radius: 4px;
+}
+
+.chatMessages {
+  width: 100%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.chatInput form {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 98%;
+  min-width: 300px;
+  gap: 10px;
+}
+
+.messageInput {
+  width: 95%;
+  font-family: monospace;
+  font-size: 1.5rem;
+  background-color: var(--grey);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--lightText);
+  box-shadow: 0px 0px 5px 0px black;
+}
+
+.messageInput:focus-visible {
+  outline: none;
+  box-shadow: 0px 0px 0px 1px var(--cream), 0px 0px 10px 0px var(--cream);
+}
+
+.sendInput {
+  width: 5%;
+  font-family: monospace;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--cream);
+  color: var(--darkText);
+  box-shadow: inset 0px 0px 3px 0px var(--olive), 0px 0px 5px 0px black;
+  text-shadow: 2px 2px 10px grey;
+  min-width: 40px;
+}
+
+.sendInput:hover {
+  box-shadow: 0px 0px 5px 0px var(--cream);
+}
+
+.outgoingMessage {
+  width: fit-content;
+  padding: 10px;
+  background-color: var(--cream);
+  border-radius: 5px;
+  margin: 4px 1%;
+  align-self: end;
+}
+
+.incomingMessage {
+  width: fit-content;
+  padding: 10px;
+  background-color: var(--purple);
+  color: var(--lightText);
+  border-radius: 5px;
+  margin: 4px 1%;
+  align-self: start;
+}
